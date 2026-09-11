@@ -24,26 +24,28 @@ Proyek ini merupakan implementasi sistem kendali motor DC berikatan rapat (*clos
 
 Sistem memiliki tiga status utama (*System States*) yang dieksekusi secara non-blocking:
 
-+-----------------------+
-              |     STATE_NORMAL      |
-              | (Closed-Loop Encoder) |
-              +-----------+-----------+
-                          |
-   +----------------------+----------------------+
-   | Timeout Encoder > 400ms                     | Tekan Tombol 'A' (E-Stop)
-   v                                             v
-
-   +-----------------------+                 +-----------------------+
-|  STATE_ENCODER_FAULT  |                 |      STATE_ESTOP      |
-|  (Open-Loop Fallback) |                 |   (System Locked)     |
-+-----------+-----------+                 +-----------+-----------+
-|                                         |
-| Encoder Pulsa Pulih                     | Tekan Tombol 'A' Kembali
-+-----------------+                       | (Unlatch)
-v                       v
-+-----------------------+-----------+
-|     STATE_NORMAL      |
-+-----------------------+
+```text
+                     ┌───────────────────────┐
+                     │     STATE_NORMAL      │
+                     │ (Closed-Loop Encoder) │
+                     └──────────┬────────────┘
+                                │
+        ┌───────────────────────┴───────────────────────┐
+        │ Timeout Encoder > 400ms                       │ Tekan Tombol 'A' (E-Stop)
+        ▼                                               ▼
+┌───────────────────────┐                       ┌───────────────────────┐
+│  STATE_ENCODER_FAULT  │                       │      STATE_ESTOP      │
+│  (Open-Loop Fallback) │                       │    (System Locked)    │
+└──────────┬────────────┘                       └───────────┬───────────┘
+           │                                                │
+           │ Encoder Pulsa Pulih                            │ Tekan Tombol 'A' Kembali
+           │                                                │ (Unlatch)
+           └────────────────────┬───────────────────────────┘
+                                │
+                                ▼
+                     ┌───────────────────────┐
+                     │     STATE_NORMAL      │
+                     └───────────────────────┘
 
 
 1. **`STATE_NORMAL` (Closed-Loop Mode):**
