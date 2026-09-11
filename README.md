@@ -2,8 +2,8 @@
 
 > **Subdivisi:** Programming & Control System — GMRT UGM  
 > **Pengembang:** Jeremi Christian (26/577124/SV/27752)  
-> **Platform:** Arduino UNO R3 / ATmega328P  
-> **Simulasi:** Tinkercad Testbench Environment  
+> **Platform:** Arduino UNO
+> **Simulasi:** Tinkercad
 
 ---
 
