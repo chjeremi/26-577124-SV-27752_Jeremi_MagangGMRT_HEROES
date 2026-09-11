@@ -12,7 +12,7 @@ https://www.tinkercad.com/things/49LmtVEqjQK-26-577124-sv-27752jeremimaganggmrth
 
 
 ## Dokumentasi Video Simulasi
-
+https://drive.google.com/file/d/1k_LgZsGAdyS5uExbHql_2ST-cKtWPhk4/view?usp=drivesdk
 
 ## 📋 Deskripsi Proyek
 
