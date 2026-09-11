@@ -47,6 +47,7 @@ Sistem memiliki tiga status utama (*System States*) yang dieksekusi secara non-b
                      │     STATE_NORMAL      │
                      └───────────────────────┘
 
+```
 
 1. **`STATE_NORMAL` (Closed-Loop Mode):**
    * Motor dikendalikan berdasarkan arah dan kecepatan PWM.
